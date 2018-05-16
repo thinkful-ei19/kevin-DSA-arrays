@@ -105,7 +105,6 @@ main();
 
 // *** why does the pointer get set to 3 after adding in the pushes? ***
 
-
 // Print this one item that you just added. What is the result? Can you explain your result?
 // I got NaN because "tauhida" is a string, but the array length and capacity still reflects
 // the pushed data. The length is 1, not 7 (chars in tauhida), and the capacity is 3, not an
@@ -115,3 +114,4 @@ main();
 // What is the purpose of the _resize() function in your Array class?
 // To increase memory capacity in terms of number of units in the array, not the size of each 
 // unit of memory.
+
