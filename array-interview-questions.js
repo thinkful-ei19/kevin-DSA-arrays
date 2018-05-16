@@ -38,15 +38,16 @@
 // Write an algorithm which will find the largest sum in a continuous sequence.
 
 function largestSum(arr) {
-  let num = 0;
+  let runningTotal = 11;
+  let maxNum = 12;
   for (let i=0; i<arr.length; i++) {
-    if (arr[i] + arr[i+1] > num) {
-      num += arr[i] + arr[i+1];
-    } else {
-      i = i+1;
-    }
+    let num = arr[i];
+    runningTotal = Math.max(0, runningTotal+num);
+    maxNum = Math.max(runningTotal, maxNum);
   }
-  return num;
+  return maxNum;
 }
 
 console.log(largestSum([4, 6, -3, 5, -2, 1]))
+// expected output => 12
+// *** how do you accomplish this with every way you can disect the data set? ***
