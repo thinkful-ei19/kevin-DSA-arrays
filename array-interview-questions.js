@@ -35,3 +35,18 @@
 
 
 
+// Write an algorithm which will find the largest sum in a continuous sequence.
+
+function largestSum(arr) {
+  let num = 0;
+  for (let i=0; i<arr.length; i++) {
+    if (arr[i] + arr[i+1] > num) {
+      num += arr[i] + arr[i+1];
+    } else {
+      i = i+1;
+    }
+  }
+  return num;
+}
+
+console.log(largestSum([4, 6, -3, 5, -2, 1]))
