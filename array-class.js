@@ -78,16 +78,19 @@ function main() {
   let arr = new Array();
 
   //add an item to the array
-  arr.push(3); // Array { length: 1, _capacity: 3, ptr: 0 }
-  arr.push(5); // Array { length: 2, _capacity: 3, ptr: 0 }
-  arr.push(15); // Array { length: 3, _capacity: 3, ptr: 0 }
-  arr.push(19); // Array { length: 4, _capacity: 12, ptr: 3 }
-  arr.push(45); // Array { length: 5, _capacity: 12, ptr: 3 }
-  arr.push(10); // Array { length: 6, _capacity: 12, ptr: 3 }
-  arr.pop(); // Array { length: 5, _capacity: 12, ptr: 3 }
-  arr.pop(); // Array { length: 4, _capacity: 12, ptr: 3 }
-  arr.pop(); // Array { length: 3, _capacity: 12, ptr: 3 }
+  // arr.push(3); // Array { length: 1, _capacity: 3, ptr: 0 }
+  // arr.push(5); // Array { length: 2, _capacity: 3, ptr: 0 }
+  // arr.push(15); // Array { length: 3, _capacity: 3, ptr: 0 }
+  // arr.push(19); // Array { length: 4, _capacity: 12, ptr: 3 }
+  // arr.push(45); // Array { length: 5, _capacity: 12, ptr: 3 }
+  // arr.push(10); // Array { length: 6, _capacity: 12, ptr: 3 }
+  // arr.pop(); // Array { length: 5, _capacity: 12, ptr: 3 }
+  // arr.pop(); // Array { length: 4, _capacity: 12, ptr: 3 }
+  // arr.pop(); // Array { length: 3, _capacity: 12, ptr: 3 }
 
+  arr.push("tauhida"); // NaN // Array { length: 1, _capacity: 3, ptr: 0 }
+
+  console.log(arr.get(0));
   console.log(arr);
 }
 
@@ -95,9 +98,20 @@ main();
 
 
 
-// Explain the result of your program after adding the new lines of code.
+// Explain the result of your program after adding the new lines of code (pushes and pops).
 // The capacity triples after it's filled, and the pointer moves to the point
 // where the new set of data begins. If you then take away units of data (length), 
 // the capacity will still stay enlarged and the pointer stays where it is.
 
-// why does the pointer get set to 3 after adding in the pushes?
+// *** why does the pointer get set to 3 after adding in the pushes? ***
+
+
+// Print this one item that you just added. What is the result? Can you explain your result?
+// I got NaN because "tauhida" is a string, but the array length and capacity still reflects
+// the pushed data. The length is 1, not 7 (chars in tauhida), and the capacity is 3, not an
+// enlarged capacity to account for any overflow of data. A string with any length takes up
+// the same amount of space (1 unit of memory) as does a number with a short length.  
+
+// What is the purpose of the _resize() function in your Array class?
+// To increase memory capacity in terms of number of units in the array, not the size of each 
+// unit of memory.
